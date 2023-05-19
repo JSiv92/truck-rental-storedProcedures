@@ -1,0 +1,104 @@
+﻿<Window x:Class="JonathanSivananthanDADPartB.SalesBetweenDate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JonathanSivananthanDADPartB"
+        mc:Ignorable="d"
+        Title="SalesBetweenDate" 
+        MinHeight="450" 
+        MinWidth="800"
+        MaxHeight="900"
+        MaxWidth="1600">
+    
+    <!--background-->
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#37ae5f"/>
+            <GradientStop Color="#1f6135" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+
+
+        <!--labels-->
+        <Label Content="From"
+               Foreground="MintCream"
+               FontSize="18"
+               Grid.Column="1"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Bottom">
+        </Label>
+        <Label Content="To"
+               Foreground="MintCream"
+               FontSize="18"
+               Grid.Column="2"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Bottom">
+        </Label>
+
+        <!--datepickers-->
+        <DatePicker Name="DatePicker1" 
+                  Grid.Column="1"
+                  Grid.Row="1"
+                  Margin="20,0,20,0"                  
+                  HorizontalAlignment="Stretch"           
+                  VerticalAlignment="Top"  
+                  VerticalContentAlignment="Center"
+                  >
+        </DatePicker>
+
+        <DatePicker Name="DatePicker2" 
+                   Grid.Column="2"
+                   Grid.Row="1"
+                   Margin="20,0,20,0"
+                   VerticalAlignment="top"
+                   VerticalContentAlignment="Center">
+        </DatePicker>
+
+        <!--search button-->
+        <Button Name="searchBtn"
+                Content="Find Sales"
+                Grid.ColumnSpan="2"
+                Grid.Column="1"
+                Grid.Row="1"
+                Margin="80,30,80,30"
+                VerticalAlignment="Center" Click="searchBtn_Click">
+        </Button>
+
+
+        <!--results datagrid-->
+        <DataGrid Name="saleDatesDataGrid"
+                  Grid.Row="2"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="2">
+        </DataGrid>
+
+        <Button Name="backBtn"
+                Content="Back"
+                Grid.ColumnSpan="2"
+                Grid.Column="1"
+                Grid.Row="4"
+                Margin="80,30,80,30" Click="backBtn_Click">
+        </Button>
+
+
+
+
+
+
+    </Grid>
+</Window>
